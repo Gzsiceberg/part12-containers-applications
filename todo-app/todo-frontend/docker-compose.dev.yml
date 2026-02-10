@@ -6,6 +6,7 @@ services:
       dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
     volumes:
       - ./:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+      - /usr/src/app/node_modules # This will ensure that node_modules from the container is used, not the host machine
     ports:
       - 5173:5173
     container_name: todo-front-dev # This will name the container todo-front-dev
