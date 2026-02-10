@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
@@ -24,6 +25,18 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
       ))}
     </>
   )
+}
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+      text: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired
+    })
+  ).isRequired,
+  deleteTodo: PropTypes.func.isRequired,
+  completeTodo: PropTypes.func.isRequired
 }
 
 export default TodoList

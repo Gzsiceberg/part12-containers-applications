@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Todo = ({ todo, onDelete, onComplete }) => {
   const doneInfo = (
     <>
@@ -24,6 +26,15 @@ const Todo = ({ todo, onDelete, onComplete }) => {
       {todo.done ? doneInfo : notDoneInfo}
     </div>
   )
+}
+
+Todo.propTypes = {
+  todo: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    done: PropTypes.bool.isRequired
+  }).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired
 }
 
 export default Todo
