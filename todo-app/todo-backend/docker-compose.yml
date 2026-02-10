@@ -3,8 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: todo-backend
+    container_name: todo
     environment:
       PORT: 3000
     ports:
-      - "3000:3000"
+      - "3000:3000" 
